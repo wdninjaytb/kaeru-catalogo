@@ -1,0 +1,214 @@
+body {
+    background-color: #ccc;
+}
+
+.navbar {
+    .nav-link {
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+    .nav-link:hover {
+        color: red;
+    }
+
+.card-header {
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    
+}
+
+.card-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #000;
+    
+}
+
+a {
+    .erro {
+        position: relative;
+        left: 470px;
+    }
+}
+
+.seta-link {
+    color: #000;
+    font-size: xx-large;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo {
+    flex: 1;
+}
+
+.menu-secao {
+    margin-top: 30px;
+}
+
+
+.card-menu {
+    border: 1px solid black !important;
+    border-radius: 15px !important;
+}
+
+.sobre {
+    display: flex;
+    gap: 30px;
+    align-items: stretch; 
+    padding: 40px 30px;
+}
+
+.imagem {
+    flex-shrink: 0;
+    margin-left: 30px;
+}
+
+.imagem img {
+    width: 600px !important; 
+    height: auto !important;
+    border: 1px solid black;
+    border-radius: 30px;
+    display: block; 
+}
+
+.texto {
+    flex: 1;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto p {
+    text-align: justify;
+    font-weight: bold;
+}
+
+.textoquemsomos {
+    flex: 1;
+    padding-top: 40px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 15px ;
+    padding: 50px;
+    text-align: center;
+    margin: 40px;
+
+}
+
+.textoquemsomos p {
+    text-align: justify;
+    font-weight: bold;
+}
+
+.form {
+    width: auto;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50%;
+    
+    label {
+        font-weight: bold;
+    }
+
+    .formulário {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid black;
+        margin-bottom: 15px;
+    }
+
+    .mensagem {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 5px;
+        border: 1px solid black;
+        margin-bottom: 15px;
+    }
+
+    .btn-submit {
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #ccc;
+        width: 75px;
+        height: 55px;
+        transition: all 0.5s
+    }
+
+    .btn-submit:hover{
+        background-color: #333;
+        color: white;
+    }
+    .btn-reset {
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #ccc;
+        width: 75px;
+        height: 55px;
+        transition: all 0.5s
+    }
+
+    .btn-reset:hover{
+        background-color: #333;
+        color: white;
+    }
+}
+
+.redes{
+    width: auto;
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 1px solid;
+    margin: 15px;
+    display: grid;
+    border-radius: 15px;
+
+}
+    
+
+.redes .seta-link i {
+    font-size: 1.4rem !important;
+    font-style: normal;
+}
+
+@media (max-width: 768px) {
+    .redes .seta-link i {
+        font-size: 0.95rem !important;
+    }
+}
+
+.redes .seta-link i::before {
+    margin-right: 12px; /* Mantém o espaço entre o logo e o texto */
+}
+
