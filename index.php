@@ -12,7 +12,10 @@
 
 <body>
 
-<?php include "include/header.php"; ?>
+<?php 
+    include "conexao.php";
+    include "include/header.php"; 
+?>
 
 <main class="conteudo">
 

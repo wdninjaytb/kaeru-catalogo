@@ -1,3 +1,10 @@
+<?php
+include "conexao.php";
+
+$sqlCategorias = "select id, nome from categoria where ativo = 1 order by nome";
+
+$resultadoCategorias = $conn->query($sqlCategorias);
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -35,24 +42,42 @@
         <li class="nav-item">
           <a class="nav-link" href="?pagina=contato">Contato</a>
         </li>
+
+        <?php
+          $sqlCategorias = "select id, nome
+                  from categoria
+                  where ativo = 1
+                  order by nome";
+
+          $resultadoCategorias = $conn->query($sqlCategorias);
+        ?>  
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Produtos
           </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="?pagina=produtos">Todos os Produtos</a></li>
 
-            <li><a class="dropdown-item" href="?pagina=produtos&filtro=alimentos">Alimentos Prontos</a></li>
-
-            <li><a class="dropdown-item" href="?pagina=produtos&filtro=alimentospreprontos">Alimentos Pré Prontos</a></li>
-            
-            <li><a class="dropdown-item" href="?pagina=produtos&filtro=ingredientes">Ingredientes</a></li>
-            
-            <li><a class="dropdown-item" href="?pagina=produtos&filtro=utilitarios">Utilitários</a></li>
-
-            <li><a class="dropdown-item" href="?pagina=produtos&filtro=doces">Doces</a></li>
-          </ul>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="?pagina=produtos">
+              Todos os Produtos
+            </a>
         </li>
+
+        <?php while ($categoria = $resultadoCategorias->fetch_assoc()): ?>
+
+            <li>
+                <a class="dropdown-item"
+                   href="?pagina=produtos&categoria=<?= $categoria['id'] ?>">
+
+                  <?= htmlspecialchars($categoria['nome']) ?>
+
+                </a>
+              </li>
+
+            <?php endwhile; ?>
+          </ul>
+        </li>      
       </ul>
     </div>
   </div>

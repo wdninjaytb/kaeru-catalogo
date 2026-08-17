@@ -13,7 +13,7 @@
         
         <div class="col-12 col-md-5 mb-4 mb-md-0">
             <div class="imagem">
-                <img src="/img/fotolojakaeru.png" alt="Kaeru Loja Física" class="img-fluid">
+                <img src="./img/fotolojakaeru.png" alt="Kaeru Loja Física" class="img-fluid">
             </div>
         </div>
 
@@ -21,7 +21,7 @@
             <div class="texto">
                 <h1>Kaeru Produtos Orientais - O Japão mais perto de você</h1>
                 <h2 class="paragrafo">
-                    A Kaeru Produtos Orientais é uma loja focada na venda de produtos da Ásia, como alimentos prontos, congelados, utilitários e até ingredientes de cozinha! Estaremos muito felizes em recebê-los e atendê-los com o devido carinho e respeito!! Nossos produtos são de qualidade vindo diretamente do Japão!
+                    A Kaeru Produtos Orientais é uma loja focada na venda de produtos asiáticos, como alimentos prontos, congelados, utilitários e até ingredientes de cozinha! Estaremos muito felizes em recebê-los e atendê-los com o devido carinho e respeito!! Nossos produtos são de qualidade vindo diretamente da Ásia!
                 </h2>
             </div>
         </div>
