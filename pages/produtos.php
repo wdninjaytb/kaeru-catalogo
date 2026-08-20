@@ -12,7 +12,7 @@ function buscarProdutos($conn, $categoria = null)
 
     if ($categoria !== null) {
 
-        $sql = "select * from produto where categoria_id = ?";
+        $sql = "select p.*, e.quantidade from produto p inner join estoque e on e.produto_id = p.id where categoria_id = ? and e.quantidade > 0";
 
         $stmt = $conn->prepare($sql);
 
@@ -25,7 +25,7 @@ function buscarProdutos($conn, $categoria = null)
 
     } else {
 
-        $sql = "select * from produto";
+        $sql = "select p.*, e.quantidade from produto p inner join estoque e on e.produto_id = p.id where e.quantidade > 0";
 
         $resultado = $conn->query($sql);
     }
@@ -88,13 +88,28 @@ if($categoria !== null) {
                     </div>
                     <?php endif; ?>
                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                        <?php if (empty($produtosFiltrados)): ?>
+                            <div class="col-12">
+                                <p class="text-muted">
+                                  <?php if ($dadosCategoria): ?>
+                                    Nenhum produto disponível nessa categoria no momento.
+                                  <?php else: ?>
+                                    Nenhum produto disponível no momento.
+                                  <?php endif; ?>  
+                                </p>
+                            </div>
+
+                        <?php else: ?>
+                    
                     <?php foreach ($produtosFiltrados as $produto): ?>
                        <?php
                         ?>
                         <div class="col">
-                            <div class="card card-menu h-100 shadow-sm border-0 position-relative">
+                            <div class="card card-menu h-100 shadow-sm border-0 position-relative produto-imagem-container">
                                 <?php if (!empty($produto['img'])): ?>
-                                    <img src="<?= $caminhoImagens . $produto['img'] ?>" alt="<?= $produto['nome'] ?>" class="card-img-top produto-imagem">
+                                    <img src="<?= $caminhoImagens . $produto['img'] ?>" alt="<?= $produto['nome'] ?>" class="card-img-top produto-imagem produto-imagem-real" onerror="this.onerror=null; this.src='/PROJETOTADS2BIM/img/sem-imagem.png';">
+                                <?php else: ?>
+                                    <img src="./img/sem-imagem.png" alt="Produto sem imagem" class="card-img-top produto-placeholder">
                                 <?php endif; ?>
                                 <div class="card-body d-flex flex-column justify-content-between p-4">
                                     
@@ -107,11 +122,20 @@ if($categoria !== null) {
                                       <?php endif; ?>
                                         <h4 class="produto-nome"><?php echo $produto['nome']; ?></h4>
                                         <p class="produto-descricao card-text"><?php echo $produto['descricao']; ?></p>
+                                        <p class="produto-estoque text-muted mb-0"><?php if ($produto['quantidade'] == 1): ?>Última unidade disponível<?php elseif ($produto['quantidade'] <= 5): ?>Últimas unidades: <?= $produto['quantidade'] ?><?php else: ?>Em estoque: <?= $produto['quantidade'] ?> unidades <?php endif; ?></p>
                                     </div>
                                     
+                                    <?php
+                                        $mensagemWhatsApp = "Olá! Gostaria de pedir o produto "
+                                            . $produto['nome']
+                                            . ", no valor de R$ "
+                                            . number_format($produto['preco'], 2, ',', '.')
+                                            . ".";
+                                    ?>
+
                                     <div class="d-flex justify-content-between align-items-center mt-auto pt-2 border-top">
                                         <span class="produto-preco">R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?></span>
-                                       <a href="https://wa.me/5544999782038?text=Olá, gostaria de pedir um <?php echo urlencode($produto['nome']); ?>" target="_blank" class="seta-link text-decoration-none">
+                                       <a href="https://wa.me/5544999782038?text=<?php echo urlencode($mensagemWhatsApp) ?>" target="_blank" class="seta-link text-decoration-none">
                                             <i class="fa-brands fa-whatsapp"></i>
                                         </a>
                                     </div>
@@ -120,6 +144,8 @@ if($categoria !== null) {
                             </div>
                         </div>
                     <?php endforeach; ?>
+
+                <?php endif; ?>
                 </div> </div>
     </div>
 
