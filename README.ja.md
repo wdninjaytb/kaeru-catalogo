@@ -2,7 +2,7 @@
 
 [🇧🇷 Português](README.md) | [🇺🇸 English](README.en.md) | 🇯🇵 **日本語**
 
-Centro Universitário Integradoの**システム分析・開発（ADS）**コースで制作した大学のWeb開発プロジェクトです。
+**Centro Universitário Integradoの**システム分析・開発（ADS）**コースで制作した大学のWeb開発プロジェクトです。
 
 **Kaeru Produtos Orientais**という東洋の商品を扱う実在の店舗をもとに、商品やカテゴリーを閲覧できるオンラインカタログを制作しました。
 
