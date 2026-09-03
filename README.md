@@ -6,7 +6,7 @@ O **Kaeru Produtos Orientais** simula o catálogo online de uma loja especializa
 
 ## 📸 Preview
 
-
+![Catálogo Kaeru Produtos Orientais](catalogo-kaeru.png)
 
 ## ✨ Funcionalidades
 
