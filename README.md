@@ -45,7 +45,7 @@ O projeto utiliza PHP e MySQL/MariaDB e pode ser executado localmente utilizando
 
 O projeto também possui uma área administrativa para gerenciamento do sistema.
 
-➡️ [**Kaeru Produtos Orientais — Painel Administrativo**](https://github.com/wdninjaytb/kaeru-admin)
+➡️ [**Kaeru Produtos Orientais — Painel Administrativo**](https://github.com/wdninjaytb/kaeru-adm)
 
 ## 🎓 Contexto
 
