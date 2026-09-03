@@ -47,7 +47,7 @@ The database connection must be configured according to the local environment be
 
 The project also includes a separate administrative application for system management.
 
-➡️ [**Kaeru Produtos Orientais — Admin Panel**](https://github.com/wdninjaytb/kaeru-admin)
+➡️ [**Kaeru Produtos Orientais — Admin Panel**](https://github.com/wdninjaytb/kaeru-adm)
 
 ## 🎓 Academic Context
 
