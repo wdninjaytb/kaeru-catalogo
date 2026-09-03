@@ -8,7 +8,7 @@ Academic project developed during the Analysis and Systems Development program a
 
 ## 📸 Preview
 
-![Kaeru Produtos Orientais Catalog](catalogo-kaeru.png)
+![Kaeru Produtos Orientais Catalog](catalogokaeru.png)
 
 ## ✨ Features
 
